@@ -1,14 +1,11 @@
 package com.hermestechnologies.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "users")
 
-public class User {
+public class User implements java.io.Serializable{
 
     @Id
     @GeneratedValue
@@ -16,7 +13,13 @@ public class User {
     private String username;
     private String password;
     private String name;
-//    private Role role;
+//    private Integer role_id;
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name="role_id",referencedColumnName="id")
+    private Role role;
+
+    public User() {
+    }
 
     public Integer getId() {
         return id;
@@ -50,6 +53,13 @@ public class User {
         this.name = name;
     }
 
+    public Role getRole() {
+        return role;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
+    }
 
     @Override
     public String toString() {
@@ -58,6 +68,7 @@ public class User {
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 ", name='" + name + '\'' +
+                ", role=" + role +
                 '}';
     }
 }

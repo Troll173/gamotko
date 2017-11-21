@@ -19,7 +19,7 @@
     <facet type="hibernate" name="Hibernate">
       <configuration>
         <datasource-map>
-          <unit-entry name="getSessionFactory" />
+          <unit-entry name="getSessionFactory" value="abbeb8a8-41be-46d2-9427-af01240fb870" />
           <unit-entry name="hibernate.cfg.xml" value="abbeb8a8-41be-46d2-9427-af01240fb870" />
         </datasource-map>
         <naming-strategy-map />
@@ -77,6 +77,8 @@
     <orderEntry type="library" name="Maven: javax.servlet.jsp.jstl:javax.servlet.jsp.jstl-api:1.2.1" level="project" />
     <orderEntry type="library" name="Maven: taglibs:standard:1.1.2" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: javax.servlet.jsp:javax.servlet.jsp-api:2.3.1" level="project" />
-    <orderEntry type="library" name="Maven: hsqldb:hsqldb:1.8.0.10" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.8.10" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.8.0" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-core:2.8.10" level="project" />
   </component>
 </module>

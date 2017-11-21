@@ -57,17 +57,17 @@
                         <li class="nav-item dropdown"> <a id="messages" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link"><i class="fa fa-envelope-o"></i><span class="badge bg-orange">10</span></a>
                             <ul aria-labelledby="notifications" class="dropdown-menu">
                                 <li><a rel="nofollow" href="#" class="dropdown-item d-flex">
-                                    <div class="msg-profile"> <img src="img/avatar-1.jpg" alt="..." class="img-fluid rounded-circle"></div>
+                                    <div class="msg-profile"> <img src="${pageContext.servletContext.contextPath}/img/avatar-1.jpg" alt="..." class="img-fluid rounded-circle"></div>
                                     <div class="msg-body">
                                         <h3 class="h5">Jason Doe</h3><span>Sent You Message</span>
                                     </div></a></li>
                                 <li><a rel="nofollow" href="#" class="dropdown-item d-flex">
-                                    <div class="msg-profile"> <img src="img/avatar-2.jpg" alt="..." class="img-fluid rounded-circle"></div>
+                                    <div class="msg-profile"> <img src="${pageContext.servletContext.contextPath}/img/avatar-2.jpg" alt="..." class="img-fluid rounded-circle"></div>
                                     <div class="msg-body">
                                         <h3 class="h5">Frank Williams</h3><span>Sent You Message</span>
                                     </div></a></li>
                                 <li><a rel="nofollow" href="#" class="dropdown-item d-flex">
-                                    <div class="msg-profile"> <img src="img/avatar-3.jpg" alt="..." class="img-fluid rounded-circle"></div>
+                                    <div class="msg-profile"> <img src="${pageContext.servletContext.contextPath}/img/avatar-3.jpg" alt="..." class="img-fluid rounded-circle"></div>
                                     <div class="msg-body">
                                         <h3 class="h5">Ashley Wood</h3><span>Sent You Message</span>
                                     </div></a></li>
@@ -75,7 +75,7 @@
                             </ul>
                         </li>
                         <!-- Logout    -->
-                        <li class="nav-item"><a href="login.html" class="nav-link logout">Logout<i class="fa fa-sign-out"></i></a></li>
+                        <li class="nav-item"><a href="login?logout" class="nav-link logout">Logout<i class="fa fa-sign-out"></i></a></li>
                     </ul>
                 </div>
             </div>
@@ -86,39 +86,28 @@
         <nav class="side-navbar">
             <!-- Sidebar Header-->
             <div class="sidebar-header d-flex align-items-center">
-                <div class="avatar"><img src="img/avatar-1.jpg" alt="..." class="img-fluid rounded-circle"></div>
                 <div class="title">
-                    <h1 class="h4">Mark Stephen</h1>
-                    <p>Web Designer</p>
+                    <h1 class="h4">${loggedIn.name}</h1>
+                    <p>${loggedIn.role.role_name}</p>
                 </div>
             </div>
-            <!-- Sidebar Navidation Menus--><span class="heading">Main</span>
+            <%--<!-- Sidebar Navidation Menus--><span class="heading">Main</span>--%>
             <ul class="list-unstyled">
-                <li class="active"> <a href="index.html"><i class="icon-home"></i>Home</a></li>
-                <li><a href="#dashvariants" aria-expanded="false" data-toggle="collapse"> <i class="icon-interface-windows"></i>Dropdown </a>
-                    <ul id="dashvariants" class="collapse list-unstyled">
-                        <li><a href="#">Page</a></li>
-                        <li><a href="#">Page</a></li>
-                        <li><a href="#">Page</a></li>
-                        <li><a href="#">Page</a></li>
+                <li> <a href="/"><i class="icon-home"></i>Dashboard</a></li>
+                <li><a id="invAnchor" href="#invOptions" aria-expanded="false" data-toggle="collapse"> <i class="icon-interface-windows"></i>Inventory </a>
+                    <ul id="invOptions" class="collapse list-unstyled">
+                        <li><a href="/inventory/products">Product List</a></li>
+                        <li><a href="#">Purchase Orders</a></li>
+                        <%--<li><a href="#">Page</a></li>--%>
+                        <%--<li><a href="#">Page</a></li>--%>
                     </ul>
                 </li>
-                <li> <a href="tables.html"> <i class="icon-grid"></i>Tables </a></li>
-                <li> <a href="charts.html"> <i class="fa fa-bar-chart"></i>Charts </a></li>
-                <li> <a href="forms.html"> <i class="icon-padnote"></i>Forms </a></li>
-                <li> <a href="login.html"> <i class="icon-interface-windows"></i>Login Page</a></li>
-            </ul><span class="heading">Extras</span>
-            <ul class="list-unstyled">
-                <li> <a href="#"> <i class="icon-flask"></i>Demo </a></li>
-                <li> <a href="#"> <i class="icon-screen"></i>Demo </a></li>
-                <li> <a href="#"> <i class="icon-mail"></i>Demo </a></li>
-                <li> <a href="#"> <i class="icon-picture"></i>Demo </a></li>
             </ul>
         </nav>
         <div class="content-inner">
             <!-- Page Header-->
             <header class="page-header">
                 <div class="container-fluid">
-                    <h2 class="no-margin-bottom">Dashboard</h2>
+                    <h2 class="no-margin-bottom">${requestScope['javax.servlet.forward.request_uri']}</h2>
                 </div>
             </header>

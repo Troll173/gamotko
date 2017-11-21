@@ -18,3 +18,29 @@
 </div>
 
 <%@ include file = "foot.jsp" %>
+
+<script>
+
+    var url = "${requestScope['javax.servlet.forward.request_uri']}";
+    var title = "";
+
+    $('li > a[href^="'+url+'"]').first().parent().addClass("active");
+    if(url === "/"){
+        title = "DASHBOARD";
+    }else{
+        console.log(url);
+        switch (true){
+            case url.indexOf("inventory") > 0:
+                openInventory();
+            break;
+        }
+        title = url.substring(1, url.length).toUpperCase();
+    }
+    $(".container-fluid > h2").html(title);
+
+    function openInventory() {
+        $("#invAnchor").prop("aria-expanded",true).css("background-color","#EEF5F9");
+        $("#invOptions").addClass("show");
+    }
+
+</script>

@@ -1,1 +1,21 @@
-/* your styles go here */
+.page{
+    min-height: calc(80%) !important;
+}
+
+nav.side-navbar ul ul a{
+    background-color: #ffffff !important;
+}
+
+
+nav.side-navbar ul li.active a{
+    background-color: #EEF5F9 !important;
+}
+
+nav.side-navbar ul a:hover{
+    color: rgb(104, 106, 118);
+    background-color: rgb(238, 245, 249) !important;
+}
+
+.page-content{
+    min-height: 400px !important;
+}
