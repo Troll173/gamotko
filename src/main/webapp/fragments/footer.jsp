@@ -8,7 +8,7 @@
                 <p>GAMOT KO PHARMACEUTICALS, INC. &copy; 2018-2020</p>
             </div>
             <div class="col-sm-6 text-right">
-                <p>Design by <a href="hermes-technologies.com" class="external">Hermes Technologies</a></p>
+                <p>Developed by <a href="https://hermes-technologies.com" class="external">Hermes Technologies</a></p>
             </div>
         </div>
     </div>

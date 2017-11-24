@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 <%@ include file = "head.jsp" %>
 
@@ -18,7 +19,7 @@
                 <div class="navbar-holder d-flex align-items-center justify-content-between">
                     <!-- Navbar Header-->
                     <div class="navbar-header">
-                        <!-- Navbar Brand --><a href="index.html" class="navbar-brand">
+                        <!-- Navbar Brand --><a href="/" class="navbar-brand">
                         <div class="brand-text brand-big"><span>GAMOT </span><strong> KO</strong></div>
                         <div class="brand-text brand-small"><strong>GK</strong></div></a>
                         <!-- Toggle Button--><a id="toggle-btn" href="#" class="menu-btn active"><span></span><span></span><span></span></a>
@@ -75,7 +76,7 @@
                             </ul>
                         </li>
                         <!-- Logout    -->
-                        <li class="nav-item"><a href="login?logout" class="nav-link logout">Logout<i class="fa fa-sign-out"></i></a></li>
+                        <li class="nav-item"><a href="/login?logout" class="nav-link logout">Logout<i class="fa fa-sign-out"></i></a></li>
                     </ul>
                 </div>
             </div>
@@ -91,23 +92,15 @@
                     <p>${loggedIn.role.role_name}</p>
                 </div>
             </div>
-            <%--<!-- Sidebar Navidation Menus--><span class="heading">Main</span>--%>
+
             <ul class="list-unstyled">
                 <li> <a href="/"><i class="icon-home"></i>Dashboard</a></li>
                 <li><a id="invAnchor" href="#invOptions" aria-expanded="false" data-toggle="collapse"> <i class="icon-interface-windows"></i>Inventory </a>
                     <ul id="invOptions" class="collapse list-unstyled">
                         <li><a href="/inventory/products">Product List</a></li>
                         <li><a href="#">Purchase Orders</a></li>
-                        <%--<li><a href="#">Page</a></li>--%>
-                        <%--<li><a href="#">Page</a></li>--%>
                     </ul>
                 </li>
             </ul>
         </nav>
         <div class="content-inner">
-            <!-- Page Header-->
-            <header class="page-header">
-                <div class="container-fluid">
-                    <h2 class="no-margin-bottom">${requestScope['javax.servlet.forward.request_uri']}</h2>
-                </div>
-            </header>

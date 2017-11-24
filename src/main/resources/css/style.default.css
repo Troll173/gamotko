@@ -34,7 +34,7 @@ ul {
 }
 
 section {
-  padding: 50px 0;
+  padding: 20px 0;
 }
 
 canvas {
@@ -55,7 +55,7 @@ canvas {
 }
 
 header.page-header {
-  padding: 20px 0;
+  padding: 0px 0;
 }
 
 table {
@@ -162,7 +162,7 @@ button, input {
   position: relative;
   z-index: 7;
   border-radius: 0;
-  padding: 15px 0;
+  padding: 10px 0;
   margin-bottom: 0;
 }
 
@@ -1710,7 +1710,7 @@ input.input-material ~ label {
   color: #aaa;
   position: absolute;
   top: 14px;
-  left: 0;
+  /*left: 0;*/
   cursor: text;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;

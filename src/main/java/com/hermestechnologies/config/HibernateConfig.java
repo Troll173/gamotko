@@ -1,12 +1,9 @@
 package com.hermestechnologies.config;
 
-import com.hermestechnologies.domain.Role;
-import com.hermestechnologies.domain.User;
+import com.hermestechnologies.domain.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.ComponentScans;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
@@ -23,7 +20,7 @@ public class HibernateConfig {
     public LocalSessionFactoryBean getSessionFactory() {
         LocalSessionFactoryBean factoryBean = new LocalSessionFactoryBean();
         factoryBean.setConfigLocation(context.getResource("classpath:hibernate.cfg.xml"));
-        factoryBean.setAnnotatedClasses(User.class, Role.class);
+        factoryBean.setAnnotatedClasses(User.class, Role.class, Stock.class, Product.class, Po.class, Supplier.class);
         return factoryBean;
     }
 
