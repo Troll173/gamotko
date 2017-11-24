@@ -1,11 +1,23 @@
 .page{
-    min-height: calc(80%) !important;
+    min-height: 84vh !important;
+}
+select.form-control-sm:not([size]):not([multiple]) {
+    height: 100% !important;
+}
+.card-header{
+    margin-bottom: 30px !important;
+}
+.breadcrumb-item{
+    font-size: 12px;
+}
+
+.page-details{
+    padding-bottom: 30px;
 }
 
 nav.side-navbar ul ul a{
     background-color: #ffffff !important;
 }
-
 
 nav.side-navbar ul li.active a{
     background-color: #EEF5F9 !important;
@@ -17,5 +29,5 @@ nav.side-navbar ul a:hover{
 }
 
 .page-content{
-    min-height: 400px !important;
+    min-height: 460px !important;
 }

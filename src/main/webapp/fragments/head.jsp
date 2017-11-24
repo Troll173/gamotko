@@ -11,6 +11,10 @@
     <meta name="robots" content="all,follow">
     <!-- Bootstrap CSS-->
     <link rel="stylesheet" href="${pageContext.servletContext.contextPath}/vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="${pageContext.servletContext.contextPath}/css/typeaheadjs.css">
+    <%--Datatable--%>
+    <link rel="stylesheet" href="${pageContext.servletContext.contextPath}/node_modules/datatables.net-bs4/css/dataTables.bootstrap4.css">
+    <link rel="stylesheet" href="${pageContext.servletContext.contextPath}/node_modules/datatables.net-responsive-bs4/css/responsive.bootstrap4.css">
     <!-- Fontastic Custom icon font-->
     <link rel="stylesheet" href="${pageContext.servletContext.contextPath}/css/fontastic.css">
     <!-- Font Awesome CSS-->
@@ -18,12 +22,12 @@
     <!-- Google fonts - Poppins -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,700">
     <!-- theme stylesheet-->
-    <link rel="stylesheet" href="${pageContext.servletContext.contextPath}/css/style.default.css" id="theme-stylesheet">
+    <link rel="stylesheet" href="${pageContext.servletContext.contextPath}/css/style.default.min.css" id="theme-stylesheet">
     <!-- Custom stylesheet - for your changes-->
-    <link rel="stylesheet" href="${pageContext.servletContext.contextPath}/css/custom.css">
+    <link rel="stylesheet" href="${pageContext.servletContext.contextPath}/css/custom.min.css">
 
     <link rel="stylesheet" href="${pageContext.servletContext.contextPath}/node_modules/toastr/build/toastr.min.css">
-
+    <link rel="stylesheet" href="${pageContext.servletContext.contextPath}/css/jquery-ui.min.css">
     <!-- Favicon-->
     <link rel="shortcut icon" href="${pageContext.servletContext.contextPath}/favicon.png">
     <!-- Tweaks for older IEs--><!--[if lt IE 9]>
