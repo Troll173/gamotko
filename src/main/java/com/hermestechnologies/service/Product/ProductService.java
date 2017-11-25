@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -25,7 +24,7 @@ public class ProductService extends HermesService{
         return productDao.save(product);
     }
 
-    @Transactional
+    @Transactional(readOnly = true)
     public Product getProduct(Integer id){
         return productDao.getProduct(id);
     }

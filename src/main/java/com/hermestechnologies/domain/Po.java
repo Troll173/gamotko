@@ -18,6 +18,8 @@ public class Po {
     private Date date_created;
     @OneToMany(mappedBy="po", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private Set<Stock> stocks;
+    @OneToMany(mappedBy="po", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    private Set<PoItem> poItems;
 
 
     public Integer getId() {
@@ -50,6 +52,23 @@ public class Po {
 
     public void setDate_created(Date date_created) {
         this.date_created = date_created;
+    }
+
+
+    public Set<Stock> getStocks() {
+        return stocks;
+    }
+
+    public void setStocks(Set<Stock> stocks) {
+        this.stocks = stocks;
+    }
+
+    public Set<PoItem> getPoItems() {
+        return poItems;
+    }
+
+    public void setPoItems(Set<PoItem> poItems) {
+        this.poItems = poItems;
     }
 
     @Override

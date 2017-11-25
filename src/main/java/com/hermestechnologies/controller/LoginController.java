@@ -35,7 +35,6 @@ public class LoginController {
     @PostMapping("")
     public String loginProcess(@ModelAttribute User user, Model model, HttpSession session, HttpServletResponse response) throws IOException {
         User userRes =  userService.login(user);
-        System.out.println(userRes);
         if(userRes != null){
             ObjectMapper mapper = new ObjectMapper();
             String jsonUser = mapper.writeValueAsString(userRes);

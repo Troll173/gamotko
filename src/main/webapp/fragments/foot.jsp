@@ -15,6 +15,8 @@
 <script src="${pageContext.servletContext.contextPath}/vendor/bootstrap/js/bootstrap.min.js"></script>
 <script src="${pageContext.servletContext.contextPath}/vendor/jquery.cookie/jquery.cookie.js"> </script>
 <script src="${pageContext.servletContext.contextPath}/vendor/jquery-validation/jquery.validate.min.js"></script>
+<script src="${pageContext.servletContext.contextPath}/js/jquery.maskedinput.min.js"></script>
+
 <%--<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>--%>
 <%--<script src="${pageContext.servletContext.contextPath}/js/charts-home.js"></script>--%>
 <script src="${pageContext.servletContext.contextPath}/node_modules/toastr/build/toastr.min.js"></script>
@@ -26,6 +28,10 @@
     $('.datatable').DataTable({
         responsive: true
     });
+
+
+//    $('.mobile').mask("+63 999-999-9999",{placeholder:" "});
+
 </script>
 
 </body>

@@ -26,7 +26,6 @@ public class ProductsController {
         List<Product> products = productService.getProductList();
         model.addAttribute("products",products);
         model.addAttribute("product", new Product());
-        System.out.println(products);
         return "product-list";
     }
 

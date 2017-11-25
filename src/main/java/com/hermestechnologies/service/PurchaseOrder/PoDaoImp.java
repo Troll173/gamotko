@@ -6,6 +6,8 @@ import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 public class PoDaoImp implements PoDao{
 
@@ -17,6 +19,12 @@ public class PoDaoImp implements PoDao{
         Query<Po> query = sessionFactory.getCurrentSession().createQuery("from Po WHERE id = :id");
         query.setParameter("id", id);
         return query.getSingleResult();
+    }
+
+    public List<Po> getPos() {
+        @SuppressWarnings("unchecked")
+        Query<Po> query = sessionFactory.getCurrentSession().createQuery("from Po");
+        return query.getResultList();
     }
 
 }

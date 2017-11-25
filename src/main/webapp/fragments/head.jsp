@@ -15,6 +15,8 @@
     <%--Datatable--%>
     <link rel="stylesheet" href="${pageContext.servletContext.contextPath}/node_modules/datatables.net-bs4/css/dataTables.bootstrap4.css">
     <link rel="stylesheet" href="${pageContext.servletContext.contextPath}/node_modules/datatables.net-responsive-bs4/css/responsive.bootstrap4.css">
+
+    <link rel="stylesheet" href="${pageContext.servletContext.contextPath}/css/animate.min.css">
     <!-- Fontastic Custom icon font-->
     <link rel="stylesheet" href="${pageContext.servletContext.contextPath}/css/fontastic.css">
     <!-- Font Awesome CSS-->

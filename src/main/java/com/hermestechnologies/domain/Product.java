@@ -1,6 +1,7 @@
 package com.hermestechnologies.domain;
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -17,6 +18,9 @@ public class Product{
     private String brand_name;
     @OneToMany(mappedBy="product", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private Set<Stock> stocks;
+    @OneToMany(mappedBy="product", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    private Set<PoItem> poItems;
+
 
     public Integer getId() {
         return id;
@@ -74,6 +78,16 @@ public class Product{
     public void setStocks(Set<Stock> stocks) {
         this.stocks = stocks;
     }
+
+
+    public Set<PoItem> getPoItems() {
+        return poItems;
+    }
+
+    public void setPoItems(Set<PoItem> poItems) {
+        this.poItems = poItems;
+    }
+
 
     @Override
     public String toString() {

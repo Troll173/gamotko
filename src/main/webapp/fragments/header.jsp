@@ -98,7 +98,8 @@
                 <li><a id="invAnchor" href="#invOptions" aria-expanded="false" data-toggle="collapse"> <i class="icon-interface-windows"></i>Inventory </a>
                     <ul id="invOptions" class="collapse list-unstyled">
                         <li><a href="/inventory/products">Product List</a></li>
-                        <li><a href="#">Purchase Orders</a></li>
+                        <li><a href="/inventory/po">Purchase Orders</a></li>
+                        <li><a href="/inventory/suppliers">Suppliers</a></li>
                     </ul>
                 </li>
             </ul>

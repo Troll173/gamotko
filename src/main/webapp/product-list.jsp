@@ -114,7 +114,7 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="packaging" >Packaging</label>
-                            <form:input path="packaging"  type="text" name="packaging" class="form-control" id="packaging"/>
+                            <form:input path="packaging"  type="text" name="packaging" class="form-control" id="packaging" placeholder="Enter Packaging" required="required"/>
                         </div>
                     </div>
                 </div>

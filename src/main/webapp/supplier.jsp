@@ -9,35 +9,40 @@
     <div class="container-fluid">
         <div class="row">
             <div class="statistics col-lg-12 col-12">
-                <div class="page-content d-flex">
+                <div class="page-content d-flex ">
 
 
                     <div class="col-md-12 page-details">
+
 
                         <div class="row">
                             <div class="col-md-5 ">
                                 <div class="card">
                                     <div class="card-header">
                                         <h4>
-                                            PO Details
+                                            Supplier Details
                                         </h4>
                                     </div>
 
                                     <div class="col-md-12">
-                                    <table class="table table-striped">
-                                        <tr>
-                                            <td>Po Number:</td>
-                                            <th>${po.po_number}</th>
-                                        </tr>
-                                        <tr>
-                                            <td>Date Created:</td>
-                                            <th><fmt:formatDate value="${po.date_created}" pattern="MMM dd, YYYY" /></th>
-                                        </tr>
-                                        <tr>
-                                            <td>Supplier:</td>
-                                            <th><a href="/inventory/supplier/${po.supplier.id}">${po.supplier.supplier_name}</a></th>
-                                        </tr>
-                                    </table>
+                                        <table class="table table-striped">
+                                            <tr>
+                                                <td>Supplier Name: </td>
+                                                <th>${supplier.supplier_name}</th>
+                                            </tr>
+                                            <tr>
+                                                <td>Supplier Addres:</td>
+                                                <th>${supplier.supplier_address}</th>
+                                            </tr>
+                                            <tr>
+                                                <td>Contact #:</td>
+                                                <th>${supplier.contact_number}</th>
+                                            </tr>
+                                            <tr>
+                                                <td>Email Address:</td>
+                                                <th><a href="mailto:${supplier.email}">${supplier.email}</a></th>
+                                            </tr>
+                                        </table>
                                     </div>
 
                                 </div>
@@ -49,7 +54,7 @@
                                     <div class="card">
                                         <div class="card-header">
                                             <h4>
-                                                PO Content
+                                                Supplied Products
                                             </h4>
                                         </div>
 
@@ -59,18 +64,18 @@
                                                 <thead class="thead-inverse">
                                                 <tr>
                                                     <th>Product Name</th>
-                                                    <th>Qty</th>
+                                                    <th>Last Price</th>
                                                 </tr>
                                                 </thead>
                                                 <tbody>
-                                                <t:forEach items="${po.poItems}" var="poItem">
-                                                    <tr id="prod-${poItem.product.id}" class="animated">
-                                                        <td>${poItem.product.generic_name} ${poItem.product.dosage}
-                                                                ${poItem.product.preparation}
-                                                            (${poItem.product.brand_name})
-                                                            ${poItem.product.packaging}
+                                                <t:forEach items="${products}" var="product">
+                                                    <tr id="prod-${product.product.id}" class="animated">
+                                                        <td>${product.product.generic_name} ${product.product.dosage}
+                                                                ${product.product.preparation}
+                                                            (${product.product.brand_name})
+                                                                ${product.product.packaging}
                                                         </td>
-                                                        <td>${poItem.qty}</td>
+                                                        <td>${product.last_price}</td>
                                                     </tr>
                                                 </t:forEach>
                                                 </tbody>
@@ -90,6 +95,8 @@
 
                     </div>
 
+
+
                 </div>
             </div>
         </div>
@@ -99,9 +106,3 @@
 
 
 <%@ include file = "fragments/footer.jsp" %>
-
-<script>
-    var hash = window.location.hash;
-    console.log(hash);
-    $(hash+"").addClass("tada");
-</script>
