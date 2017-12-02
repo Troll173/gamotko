@@ -7,6 +7,7 @@ import javax.persistence.*;
 public class SupplierProduct {
 
     @Id
+    @GeneratedValue
     private Integer id;
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="product_id",referencedColumnName="id")

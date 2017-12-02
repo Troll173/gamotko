@@ -1,11 +1,16 @@
 .page{
     min-height: 84vh !important;
 }
+
+.container-fluid{
+    padding-bottom: 20px !important;
+}
+
 select.form-control-sm:not([size]):not([multiple]) {
     height: 100% !important;
 }
 .card-header{
-    margin-bottom: 30px !important;
+    margin-bottom: 10px !important;
 }
 .breadcrumb-item{
     font-size: 12px;

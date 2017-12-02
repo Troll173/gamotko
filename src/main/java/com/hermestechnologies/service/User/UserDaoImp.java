@@ -14,6 +14,9 @@ public class UserDaoImp implements UserDao {
 
     @Autowired
     private SessionFactory sessionFactory;
+    @Autowired
+    PasswordHashService passwordHashService;
+
 
     public void save(User user) {
         sessionFactory.getCurrentSession().save(user);
@@ -27,12 +30,15 @@ public class UserDaoImp implements UserDao {
 
     public User login(User user){
         @SuppressWarnings("unchecked")
-        Query<User> query = sessionFactory.getCurrentSession().createQuery("from User WHERE username =:username AND password =:password " );
+        Query<User> query = sessionFactory.getCurrentSession().createQuery("from User WHERE username =:username" );
         query.setParameter("username", user.getUsername());
-        query.setParameter("password", user.getPassword());
+//        query.setParameter("password", user.getPassword());
         User res;
         try{
-           res =  query.getSingleResult();
+            res =  query.getSingleResult();
+            if(!passwordHashService.verifyHash(user.getPassword(),res.getPassword())){
+                res = null;
+            }
         }catch (Exception e){
             res = null;
         }

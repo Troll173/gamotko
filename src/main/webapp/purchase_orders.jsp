@@ -13,7 +13,7 @@
                     <div class="card-header">
                         <h4>
                            Purchase Order List
-                            <button  data-toggle="modal" data-target="#addNewModal" class="btn btn-outline-primary btn-sm float-right" style="margin-right: 10px;"><i class="fa fa-plus-circle"></i> Create PO</button>
+                            <a href="/inventory/new/po" class="float-right"><button class="btn btn-outline-primary btn-sm " style="margin-right: 10px;"><i class="fa fa-plus-circle"></i> Create PO</button></a>
                         </h4>
                     </div>
 

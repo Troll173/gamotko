@@ -7,6 +7,7 @@ import javax.persistence.*;
 public class PoItem {
 
     @Id
+    @GeneratedValue
     private Integer id;
     private Integer qty;
     @ManyToOne

@@ -27,6 +27,8 @@ public class SupplierDaoImp implements SupplierDao{
         return query.getResultList();
     }
 
+
+
     public Supplier saveSupplier(Supplier supplier) {
         sessionFactory.getCurrentSession().save(supplier);
         return supplier;

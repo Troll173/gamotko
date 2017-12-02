@@ -71,8 +71,5 @@
 
         </script>
     </a:when>
-    <a:otherwise>
-
-    </a:otherwise>
 </a:choose>
 

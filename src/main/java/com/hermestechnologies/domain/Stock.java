@@ -19,6 +19,7 @@ public class Stock {
     @ManyToOne
     @JoinColumn(name="po_id")
     private Po po;
+    private Double capital_cost;
     private Date expiration_date;
 
 
@@ -68,6 +69,14 @@ public class Stock {
 
     public void setPo(Po po) {
         this.po = po;
+    }
+
+    public Double getCapital_cost() {
+        return capital_cost;
+    }
+
+    public void setCapital_cost(Double capital_cost) {
+        this.capital_cost = capital_cost;
     }
 
     public Date getExpiration_date() {

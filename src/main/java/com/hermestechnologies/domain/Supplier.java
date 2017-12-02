@@ -16,6 +16,8 @@ public class Supplier {
     private String email;
     @OneToMany(mappedBy="supplier", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private Set<Po> poSet;
+    @OneToMany(mappedBy="supplier", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    private Set<SupplierProduct> supplierProducts;
 
     public Integer getId() {
         return id;
@@ -55,6 +57,22 @@ public class Supplier {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public Set<Po> getPoSet() {
+        return poSet;
+    }
+
+    public void setPoSet(Set<Po> poSet) {
+        this.poSet = poSet;
+    }
+
+    public Set<SupplierProduct> getSupplierProducts() {
+        return supplierProducts;
+    }
+
+    public void setSupplierProducts(Set<SupplierProduct> supplierProducts) {
+        this.supplierProducts = supplierProducts;
     }
 
     @Override
