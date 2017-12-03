@@ -10,7 +10,7 @@
         <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
         <property name="hibernate.connection.username">${DB_USERNAME}</property>
         <property name="hibernate.connection.password">${DB_PASSWORD}</property>
-        <property name="hibernate.connection.url">${DATABASE_URL}</property>
+        <property name="hibernate.connection.url">${DB_URL}</property>
         <!--<property name="hibernate.hbm2ddl.auto">create</property>-->
 
         <property name="hibernate.c3p0.min_size">5</property>
