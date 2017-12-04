@@ -19,7 +19,11 @@ public class HibernateConfig {
     @Bean
     public LocalSessionFactoryBean getSessionFactory() {
         LocalSessionFactoryBean factoryBean = new LocalSessionFactoryBean();
-        factoryBean.setConfigLocation(context.getResource("classpath:hibernate.cfg.xml"));
+        if(System.getenv("STATE") == "testing"){
+            factoryBean.setConfigLocation(context.getResource("classpath:hibernate-dev.cfg.xml"));
+        }else{
+            factoryBean.setConfigLocation(context.getResource("classpath:hibernate.cfg.xml"));
+        }
         factoryBean.setAnnotatedClasses(User.class, Role.class, Stock.class, Product.class, Po.class, Supplier.class, PoItem.class, SupplierProduct.class);
         return factoryBean;
     }
