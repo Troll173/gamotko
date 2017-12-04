@@ -24,32 +24,43 @@ public class PoItemService {
         poItemDao.save(poItem);
     }
 
-    private List<Product> getQueuedProducts(){
+    private List<PoItem> getQueuedProducts(){
         List<PoItem> queuedItems = poItemDao.getQueued();
-        List<Product> products = new ArrayList<Product>();
+        List<PoItem> products = new ArrayList<PoItem>();
         for (Iterator<PoItem> i = queuedItems.iterator(); i.hasNext();){
-            products.add(i.next().getProduct());
+            products.add(i.next());
         }
         return products;
     }
 
 
+    private PoItem containsProduct(List<PoItem> productList, Product product){
+        PoItem res = null;
+        for (Iterator<PoItem> prod = productList.iterator(); prod.hasNext();){
+            PoItem poItem = prod.next();
+            if(poItem.getProduct().getId().equals(product.getId())){
+                res = poItem;
+            }
+        }
+        return res;
+    }
+
     @Transactional
     public List<HashMap<String,Object>> getQueuedItems(List<Supplier> suppliers){
-        List<Product> queuedItems = this.getQueuedProducts();
+        List<PoItem> queuedItems = this.getQueuedProducts();
         List<HashMap<String,Object>> res = new ArrayList<HashMap<String, Object>>();
         for (Iterator<Supplier> si = suppliers.iterator(); si.hasNext();){
 
             HashMap<String,Object> data = new HashMap<String, Object>();
 
             Supplier supplier = si.next();
-            System.out.println("supp here "+ supplier.getSupplier_name());
-            List<SupplierProduct> productList = new ArrayList<SupplierProduct>();
+            List<PoItem> productList = new ArrayList<PoItem>();
             for (Iterator<SupplierProduct> it = supplier.getSupplierProducts().iterator(); it.hasNext(); ) {
                 SupplierProduct supplierProduct = it.next();
+                PoItem poItem =this.containsProduct(queuedItems, supplierProduct.getProduct());
 
-                if(queuedItems.contains(supplierProduct.getProduct())){
-                    productList.add(supplierProduct);
+                if(poItem != null){
+                    productList.add(poItem);
                 }
             }
             data.put("supplier",supplier);

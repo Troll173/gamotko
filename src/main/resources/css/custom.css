@@ -16,6 +16,11 @@ select.form-control-sm:not([size]):not([multiple]) {
     font-size: 12px;
 }
 
+
+.connectedSortable{
+    min-height: 300px;
+}
+
 .page-details{
     padding-bottom: 30px;
 }

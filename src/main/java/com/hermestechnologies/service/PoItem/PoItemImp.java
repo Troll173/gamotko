@@ -20,9 +20,9 @@ public class PoItemImp implements PoItemDao{
     }
 
     public List getQueued() {
-//        @SuppressWarnings("unchecked")
         try {
-            Query query = sessionFactory.getCurrentSession().createQuery("from PoItem");
+            @SuppressWarnings("unchecked")
+            Query query = sessionFactory.getCurrentSession().createQuery("from PoItem WHERE po_id = null");
             return query.getResultList();
         }catch (Exception e){
             e.printStackTrace();
